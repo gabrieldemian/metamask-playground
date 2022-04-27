@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* UI & surface colors */
+
+  --bg-primary: #ffffff;
+  --bg-secondary: #8c8c8c;
+
+  --text-primary: #585858;
+  --text-secondary: #242424;
+
+  /* Brand colors */
+  --red: #ef4444;
+  --blue: #353739;
+}
+
+.dark,
+[data-theme='dark'] {
+
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #242424;
+
+  --text-primary: #bfbfbf;
+  --text-secondary: #8c8c8c;
+}
+
+html,
+body {
+  @apply bg-primary text-secondary overflow-x-hidden break-words font-nunito font-semibold;
+}
+
+.lock-scroll {
+  overflow-y: hidden !important;
+}
+
+@layer utilities {
+  .container {
+    @apply px-1 md:px-0 mx-auto;
+    max-width: clamp(728px, 75vw, calc(1440px - 300px));
+  }
+}
